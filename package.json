@@ -1,0 +1,18 @@
+{
+  "name": "einbuergerungs-express",
+  "version": "1.0.0",
+  "description": "Spielerische Lern-App für den deutschen Einbürgerungstest – Quiz, Lernkarten, Prüfungssimulation und interaktive Bundesländer-Karte.",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve .",
+    "dev": "npx --yes serve ."
+  },
+  "keywords": [
+    "einbürgerung",
+    "leben-in-deutschland",
+    "quiz",
+    "pwa",
+    "lernapp"
+  ],
+  "license": "MIT"
+}

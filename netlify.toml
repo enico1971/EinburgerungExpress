@@ -1,0 +1,35 @@
+# Netlify-Konfiguration für den Einbürgerungs-Express
+# Statische Single-Page-App – kein Build-Schritt nötig.
+
+[build]
+  publish = "."
+
+# HTML & Service Worker immer frisch laden (neue Deploys erscheinen sofort)
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Icons & Manifest dürfen länger gecacht werden
+[[headers]]
+  for = "/icon-*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Leichte Sicherheits-Header
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
